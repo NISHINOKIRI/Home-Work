@@ -5,5 +5,5 @@ while True:
         print('Палиндром')
         break
     if word != ''.join(reversed(word)):
-        print('Не палиндром\nПопробуй ещё раз')
+        print('Не палиндром')
         break
