@@ -11,13 +11,14 @@
 # Вход: x = 120
 # Выход: 21
 
-class ValueReverser:
-    def __init__(self):
-        self.input_value = input('Введите что-то: ')
-        self.result = self.get_reversed_value()
-        print(f'Результат: {self.result}')
-
 #  Первый вариант
+
+# class ValueReverser:
+#     def __init__(self):
+#         self.input_value = input('Введите что-то: ')
+#         self.result = self.get_reversed_value()
+#         print(f'Результат: {self.result}')
+
 #     def reverse_value_int(self, value):
 #         try:
 #             if_num = int(value)
@@ -46,7 +47,8 @@ class ValueReverser:
 
 # reverser = ValueReverser()
 
-# Исправленный вариант (инит очищен от лишнего кода, код перенесён в output)
+
+# Исправленный вариант (инит очищен от лишнего кода, код перенесён в output_result)
 
 class ValueReverser:
     def __init__(self):
