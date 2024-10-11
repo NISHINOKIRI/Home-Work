@@ -2,6 +2,9 @@ def get_split_words_list():
     words_list = input('Enter some words (separated by spaces) :\n').split()
     return words_list
 
+''' Здесь переменная words_list 
+это список, который был получен от функции get_split_words_list()
+таким образом, когда shown_word_list вызывается, words_list будет содержать этот список слов '''
 def shown_word_list(words_list):
     print('\nWords list:')
     print(words_list)
