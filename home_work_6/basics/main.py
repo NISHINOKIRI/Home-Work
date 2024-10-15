@@ -11,6 +11,30 @@ def ach_manager():
             file.write(f'Ачивка: "{achievement.name}"\nДата получения: {achievement.receipt_date}; \nУсловия выдачи: "{achievement.description}";\n\n')
 
 
+def read_tasks():
+    try:
+        with open('task_list.txt', 'r', encoding='utf8') as file:
+            tasks = file.read()
+            print()
+            print(tasks)
+    except FileNotFoundError:
+        print("Файл с задачами не найден.")
+    except Exception as e:
+        print(f"Произошла ошибка при чтении файла задач: {e}")
+
+def read_achievements():
+    try:
+        with open('achivments_list.txt', 'r', encoding='utf8') as file:
+            achievements = file.read()
+            print("Список ачивок:\n")
+            print(achievements)
+    except FileNotFoundError:
+        print("Файл с ачивками не найден.")
+    except Exception as e:
+        print(f"Произошла ошибка при чтении файла ачивок: {e}")
+
+
+
 app = App(
     username='Nishinokiri',
     age=27,
@@ -96,6 +120,5 @@ print(app.remove_task(6))
 
 ach_manager() # Записываем ачивки в файл
 task_manager() # Записываем задачи в файл (из рефакторенного _get_tasks)
-
-
-
+read_tasks()
+read_achievements()
