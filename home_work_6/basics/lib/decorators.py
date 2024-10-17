@@ -22,3 +22,13 @@ class Decs:
             # )
         return wrapper  # Тут как раз мы и возвращаем функцию-обёртку
 
+
+    @staticmethod # Декоратор который работает везде) и в клиенте и таск менеджере хе-хе
+    def log_del_task(fn):
+        def wrapper(self, id_, *args, **kwargs):
+            tasks = self._TASKS.get(id_)
+            name = tasks.get('name')
+            result = fn(self, id_, *args, **kwargs)
+            print(f'Задача {name} решена')
+            return result
+        return wrapper
