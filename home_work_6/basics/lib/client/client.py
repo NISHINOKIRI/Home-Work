@@ -35,7 +35,8 @@ class App(AchievmentManager, TaskManager):
         for achievement in self._USER_ACHIEVMENTS:
             achievements += f' — "{achievement.name}";\n'
         print (f'\nДостижения:{achievements}\n')
-
+        
+    @Decs.log_del_task
     def remove_task(self, id_: int):
         if not self._COMPLETE_TASKS_COUNT:
             self._add_achievement('ach_complete_first_task')
@@ -43,7 +44,9 @@ class App(AchievmentManager, TaskManager):
         self._remove_task(id_)
         self._COMPLETE_TASKS.append(task)
         self._COMPLETE_TASKS_COUNT += 1
-        return f'\nЗадача {task.name} удалена\выполнена'
+        # return f'\nЗадача {task.name} удалена\выполнена'
+        return "" # Заглушка (что бы избавиться от None)
+        
 
     def get_tasks(self):
         return self._get_tasks()
