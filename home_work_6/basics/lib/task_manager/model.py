@@ -1,5 +1,6 @@
 from lib.task_manager.dataclasses import Task
 from dataclasses import asdict
+from lib.decorators import Decs
 
 from lib.user.model import User
 
@@ -25,7 +26,8 @@ class TaskManager(User):
 
     def _add_complete_task(self, task: Task):
         self._COMPLETE_TASKS.append(task)
-
+        
+    # @Decs.log_del_task # Тут отрабатывает без заглушки
     def _remove_task(
         self,
         id_: int,
