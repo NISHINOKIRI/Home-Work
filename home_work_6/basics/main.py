@@ -1,5 +1,6 @@
 import datetime
 from lib.client.client import App
+from lib.client.manage import manage_tasks_and_achievements
 
 def manage_tasks_and_achievements():
     # Сохранение задач
@@ -109,4 +110,4 @@ print(app.remove_task(6))
 # read_tasks()
 # read_achievements()
 
-manage_tasks_and_achievements()
+manage_tasks_and_achievements(app)
