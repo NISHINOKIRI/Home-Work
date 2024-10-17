@@ -2,25 +2,25 @@ import datetime
 from lib.client.client import App
 from lib.client.manage import manage_tasks_and_achievements
 
-def manage_tasks_and_achievements():
-    # Сохранение задач
-    with open('task_list.txt', 'w', encoding='utf8') as file:
-        file.write(app.get_tasks())
+# def manage_tasks_and_achievements():
+#     # Сохранение задач
+#     with open('task_list.txt', 'w', encoding='utf8') as file:
+#         file.write(app.get_tasks())
 
-    # Сохранение ачивок
-    with open('achivments_list.txt', 'w', encoding='utf8') as file:
-        for achievement in app.get_achievements():
-            file.write(f'Ачивка: "{achievement.name}"\nДата получения: {achievement.receipt_date}; \nУсловия выдачи: "{achievement.description}";\n\n')
+#     # Сохранение ачивок
+#     with open('achivments_list.txt', 'w', encoding='utf8') as file:
+#         for achievement in app.get_achievements():
+#             file.write(f'Ачивка: "{achievement.name}"\nДата получения: {achievement.receipt_date}; \nУсловия выдачи: "{achievement.description}";\n\n')
 
-    # Чтение задач
-    with open('task_list.txt', 'r', encoding='utf8') as file:
-        print("\nСписок задач:\n")
-        print(file.read())
+#     # Чтение задач
+#     with open('task_list.txt', 'r', encoding='utf8') as file:
+#         print("\nСписок задач:\n")
+#         print(file.read())
 
-    # Чтение ачивок
-    with open('achivments_list.txt', 'r', encoding='utf8') as file:
-        print("Список ачивок:\n")
-        print(file.read())
+#     # Чтение ачивок
+#     with open('achivments_list.txt', 'r', encoding='utf8') as file:
+#         print("Список ачивок:\n")
+#         print(file.read())
 
 app = App(
     username='Nishinokiri',
